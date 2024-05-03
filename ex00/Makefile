@@ -6,7 +6,7 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/05/03 16:55:46 by fras          #+#    #+#                  #
-#    Updated: 2024/05/03 19:25:05 by fras          ########   odam.nl          #
+#    Updated: 2024/05/03 21:16:01 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,15 +33,13 @@ endif
 
 all: $(NAME)
 
-megaphone: $(OBJECTS)
+$(NAME): $(OBJECTS)
 	$(CC) $(CFLAGS) $(INCLUDE) -o $@ $(OBJECTS)
 	@$(MAKE) message EXECUTABLE=$@
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(MAKE) directories
 	$(CC) $(CFLAGS) $(INCLUDE) -o $@ -c $^
-
-mandatory: $(NAME)
 
 # Directories
 directories:
