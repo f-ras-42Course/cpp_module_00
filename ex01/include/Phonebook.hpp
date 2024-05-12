@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:52:11 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/12 13:34:23 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/12 23:01:07 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,23 @@ class Phonebook
 		enum class Status
 		{
 			STARTUP,
+			WRONG_INPUT,
+			ADD,
+			SEARCH,
 			EXIT
 		};
 		Phonebook(/* args */);
+		~Phonebook();
 		Status getStatus();
 		void setStatus(Phonebook::Status status);
-		void print_status();
+		void addContact();
+		void printContacts();
+		void operate();
 		void exit();
 	private:
 		Contacts	contacts_[8];
 		Status		status_;
+		int			indexer_;
 };
 
 #endif
