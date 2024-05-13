@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:52:11 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/13 19:44:55 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/13 19:53:26 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ class Phonebook
 		};
 		Phonebook();
 		~Phonebook();
-		Status getStatus();
 		void setStatusByUserInput(std::istream& command);
-		void operate();
+		Status operate();
+		Status getStatus();
 		void setStatus(Phonebook::Status status);
 		void addContact();
 		void searchContacts();

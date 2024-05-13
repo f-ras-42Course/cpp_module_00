@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:52:39 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/13 19:44:52 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/13 19:50:48 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void Phonebook::setStatusByUserInput(std::istream& command)
 	}
 }
 
-void Phonebook::operate()
+Phonebook::Status Phonebook::operate()
 {
 	switch (status_)
 	{
@@ -69,6 +69,7 @@ void Phonebook::operate()
 				<< "Enjoy your day :)\n";
 			break;
 	}
+	return (status_);
 }
 
 Phonebook::Status Phonebook::getStatus()
@@ -114,8 +115,7 @@ void Phonebook::searchContacts()
 	{
 		std::cin.clear(); clearerr(stdin);
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		std::cout << "Non-valid number number entered.\n";
-		std::cout << "Choose a contact number: ";
+		std::cout << "Choose a valid contact number: ";
 	}
 	std::cout << '\n';
 	printContact(id);
