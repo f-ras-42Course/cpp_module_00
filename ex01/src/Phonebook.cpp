@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:52:39 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/13 19:50:48 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/13 19:56:36 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,10 +127,10 @@ void Phonebook::printContactsOverview()
 
 	for (int i = 0; i < indexer_ + 1; i++)
 	{
-		std::cout << make_column(contacts_[indexer_].getIndexString()) << "|";
-		std::cout << make_column(contacts_[indexer_].getFirstName()) << "|";
-		std::cout << make_column(contacts_[indexer_].getLastName()) << "|";
-		std::cout << make_column(contacts_[indexer_].getNickname()) << "|\n";
+		std::cout << make_column(contacts_[i].getIndexString()) << "|";
+		std::cout << make_column(contacts_[i].getFirstName()) << "|";
+		std::cout << make_column(contacts_[i].getLastName()) << "|";
+		std::cout << make_column(contacts_[i].getNickname()) << "|\n";
 	}
 }
 
