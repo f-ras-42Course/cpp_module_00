@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:52:11 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/12 23:01:07 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/13 11:54:28 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ class Phonebook
 		Status getStatus();
 		void setStatus(Phonebook::Status status);
 		void addContact();
-		void printContacts();
+		void searchContacts();
+		void printContactsOverview();
+		void printContact(int id);
 		void operate();
 		void exit();
 	private:

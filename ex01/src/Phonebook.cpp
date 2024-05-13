@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:52:39 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/12 23:24:52 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/13 11:28:39 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 Phonebook::Phonebook(/* args */)
 : status_(Status::STARTUP)
 {
-	indexer_ = 1;
+	indexer_ = 0;
 	operate();
 }
+
 Phonebook::~Phonebook()
 {
 }
+
 void Phonebook::operate()
 {
 	switch (status_)
@@ -39,7 +41,7 @@ void Phonebook::operate()
 			addContact();
 			break;
 		case Status::SEARCH:
-			// printContacts();
+			searchContacts();
 			break;
 		case Status::EXIT:
 			std::cout << "Thank you for using the mighty Phonebook\n"
@@ -47,18 +49,22 @@ void Phonebook::operate()
 			break;
 	}
 }
+
 Phonebook::Status Phonebook::getStatus()
 {
 	return (status_);
 }
+
 void Phonebook::setStatus(Phonebook::Status status)
 {
 	status_ = status;
 }
+
 void Phonebook::exit()
 {
 	status_ = Status::EXIT;
 }
+
 void Phonebook::addContact()
 {
 	if (indexer_ == 9)
@@ -71,6 +77,7 @@ void Phonebook::addContact()
 	}
 	contacts_[indexer_].setFirstName(std::cin);
 	contacts_[indexer_].setLastName(std::cin);
+	contacts_[indexer_].setNickname(std::cin);
 	contacts_[indexer_].setPhoneNumber(std::cin);
 	contacts_[indexer_].setDarkestSecret(std::cin);
 }
