@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:53:52 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/13 19:40:04 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/13 20:33:51 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 Contacts::Contacts()
 {
-	static int id = 1;
-	
-	id_ = id++;
+	id_ = 0;
 }
 
 Contacts::~Contacts()
 {
+}
+
+void Contacts::setIndex(int index)
+{
+	id_ = index;
 }
 
 void Contacts::setFirstName(std::istream& first_name)
@@ -122,6 +125,11 @@ void Contacts::setDarkestSecret(std::istream& darkest_secret)
 		}
 	}
 	darkest_secret_ = input;
+}
+
+int Contacts::getIndex()
+{
+	return (id_);
 }
 
 const std::string& Contacts::getIndexString()

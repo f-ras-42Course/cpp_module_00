@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:52:39 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/13 20:03:17 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/13 20:42:41 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void Phonebook::setStatus(Phonebook::Status status)
 
 void Phonebook::addContact()
 {
-	if (indexer_ == 8)
+	if (indexer_ == 7)
 	{
 		indexer_ = 0;
 	}
@@ -92,6 +92,7 @@ void Phonebook::addContact()
 	{
 		indexer_++;
 	}
+	contacts_[indexer_].setIndex(indexer_ + 1);
 	contacts_[indexer_].setFirstName(std::cin);
 	contacts_[indexer_].setLastName(std::cin);
 	contacts_[indexer_].setNickname(std::cin);
@@ -123,14 +124,15 @@ void Phonebook::searchContacts()
 
 void Phonebook::printContactsOverview()
 {
-	std::string	input;
-
-	for (int i = 0; i < indexer_ + 1; i++)
+	int i = 0;
+	
+	while (contacts_[i].getIndex() != 0 && i < 8)
 	{
 		std::cout << make_column(contacts_[i].getIndexString()) << "|";
 		std::cout << make_column(contacts_[i].getFirstName()) << "|";
 		std::cout << make_column(contacts_[i].getLastName()) << "|";
 		std::cout << make_column(contacts_[i].getNickname()) << "|\n";
+		i++;
 	}
 }
 
