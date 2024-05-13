@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:53:54 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/13 11:17:21 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/13 18:01:05 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Contacts
 {
 	private:
 		int			id_;
+		std::string id_string_;
 		std::string	first_name_;
 		std::string last_name_;
 		std::string nickname_;
@@ -33,6 +34,7 @@ class Contacts
 		void setNickname(std::istream& nickname);
 		void setPhoneNumber(std::istream& phone_number);
 		void setDarkestSecret(std::istream& darkest_secret);
+		const std::string& getIndexString();
 		const std::string& getFirstName();
 		const std::string& getLastName();
 		const std::string& getNickname();
