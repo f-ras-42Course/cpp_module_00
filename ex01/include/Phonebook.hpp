@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:52:11 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/13 18:57:56 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/13 19:44:55 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ class Phonebook
 		void printContactsOverview();
 		const std::string& make_column(const std::string& test);
 		void printContact(int id);
-		void exit();
 	private:
 		Contacts	contacts_[8];
 		Status		status_;

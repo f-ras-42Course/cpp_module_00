@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:52:39 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/13 19:39:12 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/13 19:44:52 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,9 +163,4 @@ void Phonebook::printContact(int id)
 	std::cout << contacts_[id - 1].getNickname() << '\n';
 	std::cout << contacts_[id - 1].getPhoneNumber() << '\n';
 	std::cout << contacts_[id - 1].getDarkestSecret() << '\n';
-}
-
-void Phonebook::exit()
-{
-	status_ = Status::EXIT;
 }
