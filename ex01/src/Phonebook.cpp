@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:52:39 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/13 20:42:41 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/13 20:56:31 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ Phonebook::Status Phonebook::operate()
 	switch (status_)
 	{
 		case Status::STARTUP:
-			std::cout << "\nWelcome to the Mighty Phonebook!\n"
+			std::cout << "\nWelcome to The Mighty Phonebook!\n"
 					"This phonebook is phenomenal -\n"
 					"It can temporary store up to eight phone numbers!\n";
 			std::cout << "———————————————————————————————————————\n";
@@ -65,7 +65,7 @@ Phonebook::Status Phonebook::operate()
 			searchContacts();
 			break;
 		case Status::EXIT:
-			std::cout << "Thank you for using the mighty Phonebook\n"
+			std::cout << "Thank you for using The Mighty Phonebook\n"
 				<< "Enjoy your day :)\n";
 			break;
 	}
