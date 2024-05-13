@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:52:39 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/13 20:56:31 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/14 00:19:46 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,6 @@ Phonebook::Phonebook()
 : status_(Status::STARTUP)
 {
 	indexer_ = -1;
-}
-
-Phonebook::~Phonebook()
-{
 }
 
 void Phonebook::setStatusByUserInput(std::istream& command)
@@ -53,10 +49,12 @@ Phonebook::Status Phonebook::operate()
 	switch (status_)
 	{
 		case Status::STARTUP:
-			std::cout << "\nWelcome to The Mighty Phonebook!\n"
-					"This phonebook is phenomenal -\n"
-					"It can temporary store up to eight phone numbers!\n";
-			std::cout << "———————————————————————————————————————\n";
+			printMenuText();
+			setStatus(Status::HOME);
+			break;
+		case Status::HOME:
+			printMenuText();
+			setStatusByUserInput(std::cin);
 			break;
 		case Status::ADD:
 			addContact();
@@ -65,8 +63,7 @@ Phonebook::Status Phonebook::operate()
 			searchContacts();
 			break;
 		case Status::EXIT:
-			std::cout << "Thank you for using The Mighty Phonebook\n"
-				<< "Enjoy your day :)\n";
+			printMenuText();
 			break;
 	}
 	return (status_);
@@ -99,6 +96,7 @@ void Phonebook::addContact()
 	contacts_[indexer_].setPhoneNumber(std::cin);
 	contacts_[indexer_].setDarkestSecret(std::cin);
 	std::cout << "Contact " << contacts_[indexer_].getFirstName() << " added.\n";
+	setStatus(Status::HOME);
 }
 
 void Phonebook::searchContacts()
@@ -120,6 +118,7 @@ void Phonebook::searchContacts()
 	}
 	std::cout << '\n';
 	printContact(id);
+	setStatus(Status::HOME);
 }
 
 void Phonebook::printContactsOverview()
@@ -171,3 +170,69 @@ void Phonebook::printContact(int id)
 	std::cout << "Darkest secret:  ";
 	std::cout << contacts_[id - 1].getDarkestSecret() << '\n';
 }
+
+void Phonebook::printMenuText()
+{
+	switch (status_)
+	{
+		case Status::STARTUP:
+			std::cout << "\nWelcome to The Mighty Phonebook!\n"
+			"This phonebook is phenomenal -\n"
+			"It can temporary store up to eight phone numbers!\n"
+			"———————————————————————————————————————\n";
+			break;
+		case Status::HOME:
+			std::cout << '\n';
+			std::cout.width(30); std::cout << std::right << "HOME MENU\n";
+			std::cout << 
+			"Use one of the following commands: ADD, SEARCH, EXIT.\n";
+			break;
+		case Status::EXIT:
+			std::cout << "Thank you for using The Mighty Phonebook\n"
+			<< "Enjoy your day :)\n";
+			break;
+		default:
+			break;
+	}
+}
+
+// -- Varriant on searchContacts (able to exit from search menu) --
+
+// void Phonebook::searchContacts()
+// {
+//     std::stringstream ss;
+//     std::string line;
+//     int id;
+    
+//     if (indexer_ == -1)
+//     {
+//         std::cout << "No entries found. Add contact(s) first.\n";
+//         setStatus(Status::HOME);
+//         return ;
+//     }
+//     printContactsOverview();
+//     std::cout << "Choose a contact number: ";
+//     getline(std::cin, line);
+//     ss << line;
+//     if (ss.str() == "EXIT")
+//     {
+//         setStatus(Status::EXIT);
+//         return ;
+//     }
+//     while (!(ss >> id) || id > indexer_ + 1 || id <= 0)
+//     {
+//         std::cin.clear(); clearerr(stdin);
+//         std::stringstream().swap(ss);
+//         std::cout << "Choose a valid contact number: ";
+//         getline(std::cin, line);
+//         ss << line;
+//         if (ss.str() == "EXIT")
+//         {
+//             setStatus(Status::EXIT);
+//             return ;
+//         }
+//     }
+//     std::cout << '\n';
+//     printContact(id);
+//     setStatus(Status::HOME);
+// }

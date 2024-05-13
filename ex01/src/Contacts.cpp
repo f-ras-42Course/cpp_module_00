@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:53:52 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/13 21:05:51 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/14 00:19:56 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 Contacts::Contacts()
 {
 	id_ = 0;
-}
-
-Contacts::~Contacts()
-{
 }
 
 void Contacts::setIndex(int index)

@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:53:54 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/13 20:34:01 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/14 00:20:07 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class Contacts
 		std::string	darkest_secret_;
 	public:
 		Contacts();
-		~Contacts();
 		void setIndex(int index);
 		void setFirstName(std::istream& first_name);
 		void setLastName(std::istream& last_name);
