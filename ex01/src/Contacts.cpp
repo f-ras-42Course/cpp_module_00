@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:53:52 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/13 20:33:51 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/13 21:05:51 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,6 @@ void Contacts::setPhoneNumber(std::istream& phone_number)
 void Contacts::setDarkestSecret(std::istream& darkest_secret)
 {
 	std::string	input;
-
 
 	while (input.empty())
 	{
