@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:52:39 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/13 19:56:36 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/13 20:03:17 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,9 +158,14 @@ const std::string& Phonebook::make_column(const std::string& input)
 
 void Phonebook::printContact(int id)
 {
+	std::cout << "First name:      ";
 	std::cout << contacts_[id - 1].getFirstName() << '\n';
+	std::cout << "Last name:       ";
 	std::cout << contacts_[id - 1].getLastName() << '\n';
+	std::cout << "Nickname:        ";
 	std::cout << contacts_[id - 1].getNickname() << '\n';
+	std::cout << "Phonenumber:     ";
 	std::cout << contacts_[id - 1].getPhoneNumber() << '\n';
+	std::cout << "Darkest secret:  ";
 	std::cout << contacts_[id - 1].getDarkestSecret() << '\n';
 }
