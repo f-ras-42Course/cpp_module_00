@@ -6,18 +6,18 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:52:11 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/14 00:21:06 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/14 17:45:57 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef PhoneBook_HPP
+# define PhoneBook_HPP
 
 #include "Contacts.hpp"
 #include <string>
 #include <iostream>
 
-class Phonebook
+class PhoneBook
 {
 	public:
 		enum class Status
@@ -28,11 +28,11 @@ class Phonebook
 			SEARCH,
 			EXIT
 		};
-		Phonebook();
+		PhoneBook();
 		void setStatusByUserInput(std::istream& command);
 		Status operate();
 		Status getStatus();
-		void setStatus(Phonebook::Status status);
+		void setStatus(PhoneBook::Status status);
 		void addContact();
 		void searchContacts();
 		void printContactsOverview();

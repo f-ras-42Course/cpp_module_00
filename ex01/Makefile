@@ -6,11 +6,11 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/05/08 14:49:14 by fras          #+#    #+#                  #
-#    Updated: 2024/05/12 11:28:02 by fras          ########   odam.nl          #
+#    Updated: 2024/05/14 17:45:57 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = PhoneBook
 CC = c++
 CFLAGS = -Werror -Wextra -Wall
 INCLUDE = -I include
