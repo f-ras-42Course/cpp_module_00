@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:52:39 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/14 17:45:57 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/14 18:15:27 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ void PhoneBook::searchContacts()
 	if (indexer_ == -1)
 	{
 		std::cout << "No entries found. Add contact(s) first.\n";
+		setStatus(Status::HOME);
 		return ;
 	}
 	printContactsOverview();
@@ -176,8 +177,8 @@ void PhoneBook::printMenuText()
 	switch (status_)
 	{
 		case Status::STARTUP:
-			std::cout << "\nWelcome to The Mighty PhoneBook!\n"
-			"This PhoneBook is phenomenal -\n"
+			std::cout << "\nWelcome to The Mighty Phonebook!\n"
+			"This phonebook is phenomenal -\n"
 			"It can temporary store up to eight phone numbers!\n"
 			"———————————————————————————————————————\n";
 			break;
@@ -188,7 +189,7 @@ void PhoneBook::printMenuText()
 			"Use one of the following commands: ADD, SEARCH, EXIT.\n";
 			break;
 		case Status::EXIT:
-			std::cout << "Thank you for using The Mighty PhoneBook\n"
+			std::cout << "Thank you for using The Mighty Phonebook\n"
 			<< "Enjoy your day :)\n";
 			break;
 		default:
