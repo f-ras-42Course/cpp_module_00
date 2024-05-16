@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/12 08:52:39 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/16 10:23:46 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/16 12:35:10 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,11 +146,7 @@ const std::string& PhoneBook::make_column(const std::string& input)
 	{
 		print_column_.insert(0, 10 - size, ' ');
 	}
-	else if (size == 10)
-	{
-		print_column_.resize(10);
-	}
-	else
+	if (size > 10)
 	{
 		print_column_.resize(9);
 		print_column_ += '.';
