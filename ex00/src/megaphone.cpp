@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/03 16:52:55 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/03 21:00:34 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/29 11:22:29 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char *argv[])
 		{
 			for (char *c = argv[i]; *c != '\0'; c++)
 			{
-				std::putchar(std::toupper(*c));
+				std::cout << static_cast<char>(std::toupper(*c));
 			}
 		}
 	}
